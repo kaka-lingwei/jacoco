@@ -58,6 +58,8 @@ jobs:
           customSettings: '' # Optional custom settings (separated by semicolon). See: https://github.com/danielpalme/ReportGenerator/wiki/Settings.
           toolpath: 'reportgeneratortool' # Default directory for installing the dotnet tool.
 
+
+
       - name: Upload coverage report artifact
         uses: actions/upload-artifact@v2.2.3
         with:
