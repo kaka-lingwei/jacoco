@@ -27,19 +27,16 @@ jobs:
       - uses: carlosperate/download-file-action@v2
         name: download-coverage
         with:
-          file-url: 'https://onetest-opensource-oss.oss-us-west-1.aliyuncs.com/onetest/coverage/4cd5cafb-3a65-4e95-800f-3907a356c0b0/coverageReport.zip'
-          file-name: 'coverageReport.zip'
+          file-url: 'https://onetest-opensource-oss.oss-us-west-1.aliyuncs.com/onetest/coverage/jacoco.xml'
+          file-name: 'jacoco.xml'
       - run: |
-          unzip coverageReport.zip
           ls
-          mkdir xml-report
-          cp -r *.xml xml-report/
           pwd
       - uses: codecov/codecov-action@v3
         name: upload-to-codecov
         with:
           #token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          files: ./mst-automation-report.xml,./mst-gateway-report.xml # optional
+          files: ./jacoco.xml # optional
           flags: unittests # optional
           name: codecov-umbrella # optional
           fail_ci_if_error: true # optional (default = false)
