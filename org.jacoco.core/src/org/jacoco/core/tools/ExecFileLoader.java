@@ -53,6 +53,7 @@ public class ExecFileLoader {
 	 *             in case of problems while reading from the stream
 	 */
 	public void load(final InputStream stream) throws IOException {
+		System.out.println("test cov");
 		final ExecutionDataReader reader = new ExecutionDataReader(
 				new BufferedInputStream(stream));
 		reader.setExecutionDataVisitor(executionData);
@@ -69,6 +70,7 @@ public class ExecFileLoader {
 	 *             in case of problems while reading from the stream
 	 */
 	public void load(final File file) throws IOException {
+		System.out.println("test cov");
 		final InputStream stream = new FileInputStream(file);
 		try {
 			load(stream);
@@ -86,6 +88,7 @@ public class ExecFileLoader {
 	 *             in case of problems while writing to the stream
 	 */
 	public void save(final OutputStream stream) throws IOException {
+		System.out.println("test cov");
 		final ExecutionDataWriter dataWriter = new ExecutionDataWriter(stream);
 		sessionInfos.accept(dataWriter);
 		executionData.accept(dataWriter);
@@ -105,6 +108,7 @@ public class ExecFileLoader {
 	 *             in case of problems while writing to the stream
 	 */
 	public void save(final File file, final boolean append) throws IOException {
+		System.out.println("test cov");
 		final File folder = file.getParentFile();
 		if (folder != null) {
 			folder.mkdirs();
