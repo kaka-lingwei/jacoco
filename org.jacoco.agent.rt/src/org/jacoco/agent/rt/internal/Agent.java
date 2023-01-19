@@ -73,6 +73,7 @@ public class Agent implements IAgent {
 	 */
 	public static synchronized Agent getInstance()
 			throws IllegalStateException {
+		System.out.println("add test log for cov");
 		if (singleton == null) {
 			throw new IllegalStateException("JaCoCo agent not started.");
 		}
@@ -98,6 +99,7 @@ public class Agent implements IAgent {
 	 *            logger used by this agent
 	 */
 	Agent(final AgentOptions options, final IExceptionLogger logger) {
+		System.out.println("add test log for cov");
 		this.options = options;
 		this.logger = logger;
 		this.data = new RuntimeData();
@@ -119,6 +121,7 @@ public class Agent implements IAgent {
 	 *             in case something cannot be initialized
 	 */
 	public void startup() throws Exception {
+		System.out.println("add test log for cov");
 		try {
 			String sessionId = options.getSessionId();
 			if (sessionId == null) {

@@ -64,6 +64,7 @@ public class CoverageTransformer implements ClassFileTransformer {
 			final AgentOptions options, final IExceptionLogger logger) {
 		this.instrumenter = new Instrumenter(runtime);
 		this.logger = logger;
+		System.out.println("add test log for cov");
 		// Class names will be reported in VM notation:
 		includes = new WildcardMatcher(toVMName(options.getIncludes()));
 		excludes = new WildcardMatcher(toVMName(options.getExcludes()));
@@ -113,6 +114,7 @@ public class CoverageTransformer implements ClassFileTransformer {
 	 */
 	boolean filter(final ClassLoader loader, final String classname,
 			final ProtectionDomain protectionDomain) {
+		System.out.println("add test log for cov");
 		if (loader == null) {
 			if (!inclBootstrapClasses) {
 				return false;
