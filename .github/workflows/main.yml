@@ -33,8 +33,8 @@ jobs:
           ls
           pwd
       - name: Publish test coverage results
-          uses: PavanMudigonda/jacoco-reporter@v4.8
-          with:
+        uses: PavanMudigonda/jacoco-reporter@v4.8
+        with:
             coverage_results_path: 'jacoco.xml'
             coverage_report_title: 'Test coverage results'
             coverage_report_name: 'Test coverage results'
