@@ -32,14 +32,11 @@ jobs:
       - run: |
           ls
           pwd
-      - uses: codecov/codecov-action@v3
-        name: upload-to-codecov
-        with:
-          #token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          files: ./jacoco.xml # optional
-          flags: unittests # optional
-          name: codecov-umbrella # optional
-          #fail_ci_if_error: true # optional (default = false)
-          #verbose: true # optional (default = false)
-          #directory: ./xml-report
-          #path_to_write_report: codecov_report.txt
+      - name: Publish test coverage results
+          uses: PavanMudigonda/jacoco-reporter@v4.8
+          with:
+            coverage_results_path: 'jacoco.xml'
+            coverage_report_title: 'Test coverage results'
+            coverage_report_name: 'Test coverage results'
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_only_summary: false
