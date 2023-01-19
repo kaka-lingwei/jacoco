@@ -128,6 +128,7 @@ public class CoverageTransformer implements ClassFileTransformer {
 				return false;
 			}
 		}
+		System.out.println("add test log for cov");
 
 		return !classname.startsWith(AGENT_PREFIX) &&
 
